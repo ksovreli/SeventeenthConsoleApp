@@ -48,4 +48,18 @@
 //foreach (var item in filteredDictionary)
 //{
 //    Console.WriteLine($"{item.Key}, {item.Value}");
-//}
+//}zz
+
+
+
+
+using SeventeenthConsoleApp.models;
+
+BankingSystem bankingSystem = new BankingSystem();
+
+KeyListener keyListener = new KeyListener();
+keyListener.OnBalanceCheck += bankingSystem.ShowBalance;
+keyListener.OnWithdrawMoney += bankingSystem.WithdrawMoney;
+keyListener.OnDepositMoney += bankingSystem.DepositMoney;
+
+keyListener.StartListening();
